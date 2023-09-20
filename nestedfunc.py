@@ -37,3 +37,4 @@ def main_func():
 
 aux = decor_func(main_func)
 aux()
+
