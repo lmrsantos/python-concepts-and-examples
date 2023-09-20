@@ -13,3 +13,6 @@ uni = set1|set2
 exc = set1^set2
 print (inter, uni, exc)
 
+for i in set1:
+    print (i)
+

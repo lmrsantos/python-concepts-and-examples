@@ -12,5 +12,5 @@ def findCombination(listnumbers, target):
     sumNumbers(listnumbers, 0, 0, [], target)
     return result
     
-result = findCombination([2,3,5],8)
+result = findCombination([2,3,4],17)
 print (result)
