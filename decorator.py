@@ -32,3 +32,21 @@ def soma(x, y, z):
 a = func_out(soma, 79243, 22340, 1583)
 a()
 
+
+def func_outter(func):
+    def func_inner(x,y):
+        print ("---------\nbefore")
+        if y == 0:
+            print ("Cannot divide by 0")
+        else:
+            func(x,y)
+        print ("after")
+    return func_inner
+
+@func_outter
+def calc(x, y):
+    print (f'{x/y:,.2F}')
+
+calc(4,2)
+calc(4,0)
+
