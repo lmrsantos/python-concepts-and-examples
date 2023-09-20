@@ -17,3 +17,18 @@ def main_func():
 
 main_func()
 
+print ("--------")
+
+def func_out(func,x,y,z):
+    def func_inner():
+        print ("before")
+        func(x,y,z)
+        print ("after")
+    return func_inner
+
+def soma(x, y, z):
+    print (f'{x+y-z:,}')
+
+a = func_out(soma, 79243, 22340, 1583)
+a()
+
