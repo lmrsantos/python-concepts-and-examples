@@ -1,81 +1,3 @@
-# class employee:
-#     def __init__(self, fn, ln, sal):
-#         self.fn = fn
-#         self.ln = ln
-#         self.sal = sal
-#         self.email = fn+ln+'@test.com'
-
-#     def changesal (self, sal):
-#         self.sal = sal
-
-# #ENHERITANCE
-# class developer(employee):
-#     def __init__(self, fn, ln, sal, proglang):
-#         super().__init__(fn, ln, sal)
-#         self.progLang = proglang
-
-#     def addproglang(self, progLang):
-#         self.progLang += [progLang]
-
-# emp1 = employee('lm', 'santos', 263000)
-# print (emp1.sal, emp1.email)
-
-# emp1.changesal(380000)
-
-# print (emp1.sal)
-
-# dev1 = developer('carol', 'azevedo', 410000, ['Cobol'])
-
-# print (dev1.sal, dev1.fn, dev1.progLang)
-
-# dev1.changesal(540000)
-
-# dev1.addproglang('Java')
-
-# print (dev1.sal, dev1.fn, dev1.ln, dev1.email, dev1.progLang)
-
-
-#class employee with fs, ln, sal, email / option to change salary
-# class employee():
-#     def __init__(self, fn, ln, sal):
-#         self.fn = fn
-#         self.ln = ln
-#         self.sal = sal
-#         self.email = fn+ln+'@test.com'
-
-#     def changeSal(self, sal):
-#         self.sal = sal
-
-# #class developer with proglang / option to add proglang
-# class developer(employee):
-#     def __init__(self, fn, ln, sal, progLang):
-#         super().__init__(fn, ln, sal)
-#         self.progLang = [progLang]
-
-#     def addproglang(self, progLang):
-#         self.progLang += [progLang]
-
-# #instanciate empl1
-# emp1 = employee('emp1', 'smith', 100000)
-# print (emp1.sal)
-
-# #change emp1 salary
-# emp1.sal = 120000
-# print (emp1.sal)
-
-# #instanciate dev1
-# dev1 = developer('mike', 'withwork', 90000, 'Java')
-# print (dev1.sal, dev1.progLang)
-
-# #add progLang
-# dev1.addproglang('Python')
-# print (dev1.progLang)
-
-# #change dev1 salary
-# dev1.changeSal(85000)
-# print (dev1.sal)
-
-
 # class employee with fn, ln, sal, email
 # func to change salary and print employee data
 class Employee():
@@ -128,3 +50,33 @@ print (dev1)
 dev1.change_salary(120000)
 print ("---------------")
 print (dev1)
+
+# Multiple Inheritance
+
+class GrandPa():
+    def grandPaFunc(self, msg):
+        print (f"I am a {msg} at Grandpa's home")
+
+class Parent(GrandPa):
+    def __init__(self, msg):
+        super().__init__()
+        self.msg = msg
+
+    def parentFunc(self):
+        print (f"I am a {self.msg} at Parent's home")
+
+class GrandSon(Parent):
+    def sonFunc(self, msg):
+        print (f"I am a {msg} at GrandSon's home")
+
+son = GrandSon("grandson")
+son.grandPaFunc("grandson")
+son.parentFunc()
+son.sonFunc("grandson")
+
+parent = Parent("parent")
+parent.grandPaFunc("parent")
+parent.parentFunc()
+
+gpa = GrandPa()
+gpa.grandPaFunc("grandpa")
