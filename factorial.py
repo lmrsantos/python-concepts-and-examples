@@ -1,4 +1,9 @@
+# to make this type of code I strong recommend to think and test your logic outside of the code. First open a blank sheet 
+# (or a spreadsheet) and test your hypotesis and alternative solutions. Only after you make sure it is working, jump into
+# the codification
+
 import math
+import copy
 def calccombination(list):
     combinations=[]
 
@@ -9,8 +14,10 @@ def calccombination(list):
             nextswap = 0
 
         if nextswap <= limit:
-            auxlist = []
-            auxlist = [element for index, element in enumerate(list)]
+            auxlist = copy.deepcopy(list)
+            # alternative below to copy.deepcopy()
+            # auxlist = []
+            # auxlist = [element for index, element in enumerate(list)]
             aux = auxlist[firstswap]
             auxlist[firstswap]=auxlist[nextswap]
             auxlist[nextswap]=aux
@@ -52,7 +59,7 @@ def calccombination(list):
 
     swapelements(list, 0, 0, 1, 1, len(list)-1)
     return (combinations)
-list=['A', 'B', 'C', 'D', 'E', 'F', 'G']		
+list=['A', 'B', 'C', 'D']		
 finalcomb = calccombination(list)
 
 import csv
