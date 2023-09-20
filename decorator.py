@@ -17,11 +17,10 @@ def main_func():
 
 main_func()
 
-print ("--------")
-
+# example of nested function that without decorator (see above with decorator)
 def func_out(func,x,y,z):
     def func_inner():
-        print ("before")
+        print ("-------\nbefore")
         func(x,y,z)
         print ("after")
     return func_inner
@@ -32,7 +31,7 @@ def soma(x, y, z):
 a = func_out(soma, 79243, 22340, 1583)
 a()
 
-
+# Example of decorator with parameters
 def func_outter(func):
     def func_inner(x,y):
         print ("---------\nbefore")
