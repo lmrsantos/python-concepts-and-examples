@@ -11,6 +11,6 @@ Here are some important libraries that all Python developers should know:
 - TensorFlow: TensorFlow is a library for machine learning and deep learning. It provides a flexible framework for building and training machine learning models.
 - PyTorch: PyTorch is another library for machine learning and deep learning. It is similar to TensorFlow, but it is more lightweight and flexible.
 
-  python
-  def my_function():
-    print("Hello, world!")
+```python
+def my_function():
+  print("Hello, world!")
