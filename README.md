@@ -1,6 +1,7 @@
-# General codes in Python with examples
+# General codes to better understand Python
 Here it is possible to see some examples of small codes aiming to give more clarity about how Python handles simple things like list, set and strings and more complex concepts like recursion. Also there is one funny game called Wordle. 
 
+# Libraries
 Here are some important libraries that all Python developers should know:
 
 - NumPy: NumPy is a fundamental library for scientific computing in Python. It provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to manipulate and analyze these arrays efficiently.
