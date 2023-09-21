@@ -11,3 +11,6 @@ print (list3)
 
 num = 10000.1324
 print (f'${num:,.2f}')
+
+word = "water"
+print (not word.isalpha())

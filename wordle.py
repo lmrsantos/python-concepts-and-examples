@@ -7,7 +7,7 @@
 import random
 
 def randomword(num):
-    words = ['alarm', 'angry', 'basic', 'beach', 'break', 'cabin', 'cable', 'candy', 'catch', 'cause', 'chair', 'chalk', 'chest', 'claim', 'clamp', 'clean', 'climb', 'close', 'cloud', 'coast', 'colar', 'colon', 'color', 'comic', 'cough', 'cover', 'crane', 'crawl', 'crazy', 'credit', 'cross', 'crowd', 'crush', 'curse', 'curve', 'cycle', 'damage', 'dance', 'danger', 'decide', 'delay', 'depth', 'dirty', 'doctor', 'donate', 'doubt', 'dozen', 'drain', 'dream', 'drive', 'empty', 'enemy', 'enjoy', 'enter', 'error', 'escape', 'exceed', 'excuse', 'exit', 'extra', 'faith']
+    words = ['alarm', 'angry', 'basic', 'beach', 'break', 'cabin', 'cable', 'candy', 'catch', 'cause', 'chair', 'chalk', 'chest', 'claim', 'clamp', 'clean', 'climb', 'close', 'cloud', 'coast', 'colar', 'colon', 'color', 'comic', 'cough', 'cover', 'crane', 'crawl', 'crazy', 'cross', 'crowd', 'crush', 'curse', 'curve', 'cycle', 'dance', 'danger', 'delay', 'depth', 'dirty', 'doctor', 'donate', 'doubt', 'dozen', 'drain', 'dream', 'drive', 'empty', 'enemy', 'enjoy', 'enter', 'error', 'extra', 'faith']
     return words[random.randint(0,num-1)]
 class Player():
     def __init__(self, name):
