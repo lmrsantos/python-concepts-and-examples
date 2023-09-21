@@ -1,5 +1,5 @@
 # General codes to better understand Python
-Here it is possible to see some examples of small codes aiming to give more clarity about how Python handles simple things like list, set and strings and more complex concepts like recursion. Also there is one funny game called Wordle. 
+Here it is possible to see some examples of small codes about how to handle simple things in Python such as list, set and strings and more complex concepts like recursion and decorators. If it is too much and want a break, play a little Wordle - you can see this code in this library as well.
 
 # Libraries
 Here are some important libraries that all Python developers should know:
