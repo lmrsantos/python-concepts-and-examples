@@ -47,10 +47,3 @@
 # son = x.GrandSon("grandson")
 # son.grandPaFunc("grandson")
 
-
-
-def cont(x,y):
-    return x+y
-
-result = list(map(lambda i,j: i+j,[3,4],[5,6]))
-print (result)
