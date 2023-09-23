@@ -11,6 +11,7 @@ for i in range(1,10):
 
 print(mylist)
 
+# with ternary operator
 cont = lambda x,y: x**y if y%2 == 0 else y**x
 print (cont(2,5))
 
