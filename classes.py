@@ -6,7 +6,7 @@ class Employee():
         self.fn = fn
         self.ln = ln
         self.salary = salary
-        self.email = fn+"."+ln+"test.com"
+        self.email = fn+"."+ln+"@test.com"
 
     def __str__(self):
         return (f'FN: {self.fn}\nLN: {self.ln}\nSalary: {self.salary}')
@@ -28,30 +28,30 @@ class Developer (Employee):
         for language in languages:
             self.languages.append(language)
 
-# emp1 smith, salary = $100k
-emp1 = Employee("bob emp1", "smith", 100000)
-print (emp1)
+# # emp1 smith, salary = $100k
+# emp1 = Employee("bob emp1", "smith", 100000)
+# print (emp1)
 
-# emp1 new salary = $105k
-emp1.change_salary(105000)
-print ("---------------")
-print (emp1)
+# # emp1 new salary = $105k
+# emp1.change_salary(105000)
+# print ("---------------")
+# print (emp1)
 
-# emp1 developer with java, c++ languages
-dev1 = Developer("bob dev1", "smith", 100000, ["java", "c++"])
-print ("---------------")
-print (dev1)
-#emp1 developer add languages python
-dev1.add_languages(["python", "javascript"])
-print ("---------------")
-print (dev1)
+# # emp1 developer with java, c++ languages
+# dev1 = Developer("bob dev1", "smith", 100000, ["java", "c++"])
+# print ("---------------")
+# print (dev1)
+# #emp1 developer add languages python
+# dev1.add_languages(["python", "javascript"])
+# print ("---------------")
+# print (dev1)
 
-#dev1 change salary to $120k
-dev1.change_salary(120000)
-print ("---------------")
-print (dev1)
+# #dev1 change salary to $120k
+# dev1.change_salary(120000)
+# print ("---------------")
+# print (dev1)
 
-# Multiple Inheritance
+# # Multiple Inheritance
 
 class GrandPa():
     def grandPaFunc(self, msg):
@@ -69,16 +69,16 @@ class GrandSon(Parent):
     def sonFunc(self, msg):
         print (f"I am a {msg} at GrandSon's home")
 
-son = GrandSon("grandson")
-son.grandPaFunc("grandson")
-son.parentFunc()
-son.sonFunc("grandson")
+# son = GrandSon("grandson")
+# son.grandPaFunc("grandson")
+# son.parentFunc()
+# son.sonFunc("grandson")
 
-parent = Parent("parent")
-parent.grandPaFunc("parent")
-parent.parentFunc()
+# parent = Parent("parent")
+# parent.grandPaFunc("parent")
+# parent.parentFunc()
 
-gpa = GrandPa()
-gpa.grandPaFunc("grandpa")
+# gpa = GrandPa()
+# gpa.grandPaFunc("grandpa")
 
 
