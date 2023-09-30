@@ -80,3 +80,5 @@ text = "This is a text! There are some ponctuations. How can I remove them?"
 pattern = re.compile (r'[^!.? ]+')
 clean = re.findall(pattern, text)
 print (f'\n===> This is the clean text w/t ponctuations. Using ^!.? ]+: {" ".join(clean)}')
+
+
