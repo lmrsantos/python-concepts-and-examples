@@ -11,7 +11,7 @@ def get_response_to_prompt(prompt):
 prompt = """ Classify the text below, between parentesis (), as having either a positive or negative sentiment.
 
 (
-I love
+I love this party but I am afraid that the party will be fantastically bad, but in the end everyone will be in love after a long fight
 )
 """
 # step 1: I am afraid
