@@ -1,11 +1,8 @@
-# Sending and receiving email 
+# Sending and receiving email  with smtplib
 
 ## 1 - Import the library
 import smtplib
 import getpass
-import os
-psw = os.getenv("GMAIL_APP_KEY")
-username = "luizmrdsantos@gmail.com"
 
 ## 2 - Instantiate the object
 smtp_object = smtplib.SMTP("smtp.gmail.com", 587)
@@ -15,8 +12,8 @@ smtp_object.ehlo()
 smtp_object.starttls() # because it is using port 587
 
 ## 4 - LOGIN - Don't forget to protect your password using getpass lib
-# username = getpass.getpass("Enter your email: ")
-# psw = getpass.getpass("Password: ")
+username = getpass.getpass("Enter your email: ")
+psw = getpass.getpass("Password: ")
 smtp_object.login(username, psw)
 
 ## 5 - Build the message: email_from, email_to, subject and body
