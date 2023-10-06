@@ -3,6 +3,8 @@ import imaplib
 import getpass
 import email ## built-in method to manipulate the email in string format
 import chardet
+import pandas as pd
+import datetime
 
 # 1 - Instantiate the object
 imap = imaplib.IMAP4_SSL("imap.gmail.com")
@@ -58,13 +60,14 @@ UNKEYWORD <flag>    Messages that do not have the specified keyword set.
 UNSEEN              Messages that do not have the \Seen flag set.
 '''
 # typ, data = imap.search(None,"FROM '<ADD YOUR STRING HERE>'") ## grab only the IDs
-typ, data = imap.search(None,"FROM 'IMDb' SINCE 21-Sep-2023") ## For clause "AND" leave space between each condition. For "OR" clause use the connector "OR".
+typ, data = imap.search(None,'SUBJECT "something else" SINCE 4-Oct-2023') ## For clause "AND" leave space between each condition. For "OR" clause use the connector "OR".
 
 email_id = data[0]
 
 list_emails = data[0].split()
-ans  ="Y"
 # 6 - Manipulate the data that you grab using email build-in method or by scriping one by yourself
+ans  ="Y"
+my_emails = []
 for item in list_emails:
     ## Option #1: using message_from_string
     # result, email_data = imap.fetch(item, '(RFC822)')   ## grab the data for each ID
@@ -84,16 +87,24 @@ for item in list_emails:
             body = str(line.get_payload(decode=True)).replace('\\r', '\r').replace('\\n', '\n')[2:]
             print (f'{body[0:100]}\n')
             print ("--------------------------")
-            r = input("Mask as (R)ead or (D)elete it: ").upper()
-            if r == "D":
-                imap.store(item, "+FLAGS", "\\Deleted")
-            elif r == "R":
-                imap.store(item,"+FLAGS", "\\Seen")
+            invalid_ans = True
+            while invalid_ans:
+                r = input("Mark as Read (L)ater, (R)ead or (D)elete it: ").upper()
+                if r == "D":
+                    imap.store(item, "+FLAGS", "\\Deleted")
+                    invalid_ans = False
+                elif r == "R":
+                    my_emails.append([email_message['from'], email_message['date'], email_message['SUBJECT'], body])
+                    imap.store(item,"+FLAGS", "\\Seen")
+                    invalid_ans = False
+                elif r == "L":
+                    invalid_ans = False
             ans = input ("Continue? (Y/N)")
             if ans.upper() == "N":
                 break
     if ans.upper() == "N":
         break
-
+df = pd.DataFrame(my_emails, columns=['FROM', 'DATE', 'SUBJECT','BODY'])
+df.to_excel(f'my_emails_{datetime.datetime.now().strftime("%m%d%Y_%H%M%S")}.xlsx', index=False)    
 # 7 - Close session
 imap.close
