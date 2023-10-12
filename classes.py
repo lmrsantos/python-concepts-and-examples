@@ -25,8 +25,9 @@ class Developer (Employee):
         return super().__str__() + f'\nLanguages: {self.languages}'
 
     def add_languages(self, languages):
-        for language in languages:
-            self.languages.append(language)
+        self.languages.extend(languages)
+        # for language in languages:
+        #     self.languages.append(language)
 
 # # emp1 smith, salary = $100k
 # emp1 = Employee("bob emp1", "smith", 100000)
@@ -37,7 +38,7 @@ class Developer (Employee):
 # print ("---------------")
 # print (emp1)
 
-# # emp1 developer with java, c++ languages
+# emp1 developer with java, c++ languages
 # dev1 = Developer("bob dev1", "smith", 100000, ["java", "c++"])
 # print ("---------------")
 # print (dev1)
