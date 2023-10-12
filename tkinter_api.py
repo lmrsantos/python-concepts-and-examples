@@ -129,8 +129,8 @@ def chosejob():
             if jsonOK:
                 submConf = messagebox.askyesno("Confirm Simulation", message="Do you confirm the simulation for?\n\nJob Name: "+jobmsg+"\nJson File: "+item)
                 if submConf:
-                    # CallLMBot.main(jobname.get(), item)
-                    CallSolarAPI.main(jobname.get(), item)
+                    CallBot.main(jobname.get(), item)
+                    # CallSolarAPI.main(jobname.get(), item)
                 else:
                     messagebox.showinfo("Information","Simulation was not submitted for:\n\nJob Name: "+jobmsg+"\n\nJson File: "+item)
 
